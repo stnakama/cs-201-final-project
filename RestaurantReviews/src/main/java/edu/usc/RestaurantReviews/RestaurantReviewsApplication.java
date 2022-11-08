@@ -39,7 +39,7 @@ class Test {
 		
 		String msg = "";
 		
-		try {
+//		try {
 //			//c = DriverManager.getConnection("jdbc:mysql://34.94.218.82:3306/RestaurantReviewsDatabase");
 //			c = DriverManager.getConnection("jdbc:mysql://34.94.218.82:3306/RestaurantReviewsDatabase?user=root");
 //			s = c.createStatement();

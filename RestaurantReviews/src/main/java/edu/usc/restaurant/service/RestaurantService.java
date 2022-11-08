@@ -19,7 +19,7 @@ public class RestaurantService {
 	}
 
 	// READ
-	public List<Restaurant> getEmployees() {
+	public List<Restaurant> getRestaurants() {
 	    return rRepo.findAll();
 	}
 
