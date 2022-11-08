@@ -7,16 +7,26 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
 @Entity
-@Table(name = "restaurant")
+@Table(name = "Restaurant")
 public class Restaurant {
         
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        @Column(name="restaurant_ID")
+        @Column(name="restaurantID")
             private Long id;
         
-        @Column(name="Name")
+        @Column(name="name")
         private String name;
+        
+        @Column(name="address")
+        private String address;
+        
+
+        
+        @Column(name="cusineType")
+        private String cusineType;
+        
 
 }
