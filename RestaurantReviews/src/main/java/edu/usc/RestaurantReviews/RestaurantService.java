@@ -1,10 +1,8 @@
-package edu.usc.restaurant.service;
+package edu.usc.RestaurantReviews;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import edu.usc.restaurant.model.Restaurant;
-import edu.usc.restaurant.repository.RestaurantRepository;
 
 import java.util.List;
 
