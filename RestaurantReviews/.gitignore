@@ -31,3 +31,10 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### bin ###
+bin/
+
+### logs ###
+log.txt
+log.txt.*
