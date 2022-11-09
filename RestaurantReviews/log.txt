@@ -550,3 +550,97 @@ Caused by: java.net.SocketTimeoutException: connect timed out
 2022-11-08 14:15:28.538 DEBUG 95744 --- [http-nio-8081-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
 2022-11-08 14:15:28.538 DEBUG 95744 --- [http-nio-8081-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [[edu.usc.RestaurantReviews.Restaurant@13dce1f3]]
 2022-11-08 14:15:28.552 DEBUG 95744 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-11-08 14:27:41.278  INFO 95744 --- [RMI TCP Connection(18)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-11-08 14:27:41.291  INFO 95744 --- [RMI TCP Connection(18)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-08 14:27:41.293  INFO 95744 --- [RMI TCP Connection(18)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2022-11-08 14:27:41.308  INFO 95744 --- [RMI TCP Connection(18)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-08 14:27:41.310  INFO 95744 --- [RMI TCP Connection(18)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-08 14:27:41.316  INFO 95744 --- [RMI TCP Connection(18)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-08 20:27:37.435  INFO 737 --- [main] e.u.R.RestaurantReviewsApplication       : Starting RestaurantReviewsApplication using Java 11.0.16.1 on Adityas-MacBook-Air.local with PID 737 (/Users/adityak2003/eclipse-workspace/cs-201-final-project/RestaurantReviews/target/classes started by adityak2003 in /Users/adityak2003/eclipse-workspace/cs-201-final-project/RestaurantReviews)
+2022-11-08 20:27:37.438  INFO 737 --- [main] e.u.R.RestaurantReviewsApplication       : No active profile set, falling back to 1 default profile: "default"
+2022-11-08 20:27:37.862  INFO 737 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-08 20:27:37.897  INFO 737 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24 ms. Found 1 JPA repository interfaces.
+2022-11-08 20:27:38.184  INFO 737 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-11-08 20:27:38.190  INFO 737 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-08 20:27:38.190  INFO 737 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-08 20:27:38.263  INFO 737 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-08 20:27:38.263  INFO 737 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 795 ms
+2022-11-08 20:27:38.353  INFO 737 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-08 20:27:38.598  INFO 737 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-08 20:27:39.187  INFO 737 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-08 20:27:39.373  WARN 737 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-08 20:27:39.436 DEBUG 737 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-11-08 20:27:39.483 DEBUG 737 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 6 mappings in 'requestMappingHandlerMapping'
+2022-11-08 20:27:39.498 DEBUG 737 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-11-08 20:27:39.504 DEBUG 737 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-11-08 20:27:39.592  INFO 737 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-11-08 20:27:39.599  INFO 737 --- [main] e.u.R.RestaurantReviewsApplication       : Started RestaurantReviewsApplication in 2.493 seconds (JVM running for 2.931)
+2022-11-08 20:27:42.612  INFO 737 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-08 20:27:42.613  INFO 737 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-08 20:27:42.613 DEBUG 737 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-11-08 20:27:42.613 DEBUG 737 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2022-11-08 20:27:42.613 DEBUG 737 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2022-11-08 20:27:42.614 DEBUG 737 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@1e4d93f7
+2022-11-08 20:27:42.614 DEBUG 737 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@33a7331
+2022-11-08 20:27:42.615 DEBUG 737 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2022-11-08 20:27:42.615  INFO 737 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-11-08 20:27:42.621 DEBUG 737 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/restaurants", parameters={}
+2022-11-08 20:27:42.624 DEBUG 737 --- [http-nio-8081-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to edu.usc.RestaurantReviews.RestaurantController#readRestaurants()
+2022-11-08 20:27:42.790 DEBUG 737 --- [http-nio-8081-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-11-08 20:27:42.790 DEBUG 737 --- [http-nio-8081-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [[edu.usc.RestaurantReviews.Restaurant@2e7f2c30]]
+2022-11-08 20:27:42.817 DEBUG 737 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-11-08 20:27:43.866 DEBUG 737 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/restaurants", parameters={}
+2022-11-08 20:27:43.867 DEBUG 737 --- [http-nio-8081-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to edu.usc.RestaurantReviews.RestaurantController#readRestaurants()
+2022-11-08 20:27:43.911 DEBUG 737 --- [http-nio-8081-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-11-08 20:27:43.912 DEBUG 737 --- [http-nio-8081-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [[edu.usc.RestaurantReviews.Restaurant@5153bfb1]]
+2022-11-08 20:27:43.915 DEBUG 737 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-11-08 20:27:46.360  INFO 737 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-11-08 20:27:46.366  INFO 737 --- [RMI TCP Connection(2)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-08 20:27:46.368  INFO 737 --- [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2022-11-08 20:27:46.375  INFO 737 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-08 20:27:46.377  INFO 737 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-08 20:27:46.384  INFO 737 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-08 20:41:25.124  INFO 849 --- [main] e.u.R.RestaurantReviewsApplication       : Starting RestaurantReviewsApplication using Java 11.0.16.1 on Adityas-MacBook-Air.local with PID 849 (/Users/adityak2003/eclipse-workspace/cs-201-final-project/RestaurantReviews/target/classes started by adityak2003 in /Users/adityak2003/eclipse-workspace/cs-201-final-project/RestaurantReviews)
+2022-11-08 20:41:25.126  INFO 849 --- [main] e.u.R.RestaurantReviewsApplication       : No active profile set, falling back to 1 default profile: "default"
+2022-11-08 20:41:25.476  INFO 849 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-08 20:41:25.506  INFO 849 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24 ms. Found 2 JPA repository interfaces.
+2022-11-08 20:41:25.791  INFO 849 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-11-08 20:41:25.797  INFO 849 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-08 20:41:25.797  INFO 849 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-08 20:41:25.865  INFO 849 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-08 20:41:25.866  INFO 849 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 714 ms
+2022-11-08 20:41:25.953  INFO 849 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-08 20:41:26.201  INFO 849 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-08 20:41:26.758  INFO 849 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-08 20:41:26.977  WARN 849 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-08 20:41:27.041 DEBUG 849 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-11-08 20:41:27.091 DEBUG 849 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
+2022-11-08 20:41:27.106 DEBUG 849 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-11-08 20:41:27.113 DEBUG 849 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-11-08 20:41:27.199  INFO 849 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-11-08 20:41:27.206  INFO 849 --- [main] e.u.R.RestaurantReviewsApplication       : Started RestaurantReviewsApplication in 2.309 seconds (JVM running for 2.823)
+2022-11-08 20:41:29.427  INFO 849 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-08 20:41:29.428  INFO 849 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-08 20:41:29.428 DEBUG 849 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-11-08 20:41:29.428 DEBUG 849 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2022-11-08 20:41:29.428 DEBUG 849 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2022-11-08 20:41:29.429 DEBUG 849 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@28ceb25e
+2022-11-08 20:41:29.429 DEBUG 849 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@da11873
+2022-11-08 20:41:29.429 DEBUG 849 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2022-11-08 20:41:29.429  INFO 849 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-11-08 20:41:29.435 DEBUG 849 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/restaurants", parameters={}
+2022-11-08 20:41:29.439 DEBUG 849 --- [http-nio-8081-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to edu.usc.RestaurantReviews.RestaurantController#readRestaurants()
+2022-11-08 20:41:29.601 DEBUG 849 --- [http-nio-8081-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-11-08 20:41:29.601 DEBUG 849 --- [http-nio-8081-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [[edu.usc.RestaurantReviews.Restaurant@106fcace]]
+2022-11-08 20:41:29.629 DEBUG 849 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-11-08 20:41:33.059 DEBUG 849 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/users", parameters={}
+2022-11-08 20:41:33.060 DEBUG 849 --- [http-nio-8081-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to edu.usc.RestaurantReviews.UserController#readRestaurants()
+2022-11-08 20:41:33.115 DEBUG 849 --- [http-nio-8081-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-11-08 20:41:33.116 DEBUG 849 --- [http-nio-8081-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [[edu.usc.RestaurantReviews.User@5df2cf40]]
+2022-11-08 20:41:33.118 DEBUG 849 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-11-08 20:42:09.558  INFO 849 --- [RMI TCP Connection(6)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-11-08 20:42:09.564  INFO 849 --- [RMI TCP Connection(6)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-08 20:42:09.566  INFO 849 --- [RMI TCP Connection(6)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2022-11-08 20:42:09.580  INFO 849 --- [RMI TCP Connection(6)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-08 20:42:09.583  INFO 849 --- [RMI TCP Connection(6)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-08 20:42:09.593  INFO 849 --- [RMI TCP Connection(6)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
