@@ -4,8 +4,10 @@ package edu.usc.RestaurantReviews;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -29,6 +31,7 @@ public class UserController {
 		return uService.getUsers();
 	}
 	
+
 	@RequestMapping(value="/users/{userID}", method=RequestMethod.GET)
 	public User readReview(@PathVariable(value = "userID") Long userID) {
 		List<User> list = uService.getUsers();
@@ -48,5 +51,17 @@ public class UserController {
 	@RequestMapping(value="/users/{userID}/reviews", method=RequestMethod.GET)
 	public List<Review> getUserReviews(@PathVariable(value = "userID") Long userID) {
 		return revService.findByUserID(userID);
+	}
+		
+	@PostMapping("/process_register")
+	public String processRegister(User user) {
+	    BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+	    String encodedPassword = passwordEncoder.encode(user.getPassword());
+	    user.setPassword(encodedPassword);
+	     
+	    uService.createUser(user);
+	     
+	    return "register_success";
+
 	}
 }
