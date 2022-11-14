@@ -22,6 +22,17 @@ public class AppController {
 		return "index";
 	}
 	
+	
+	@GetMapping("/login")
+	public String loginPage() {
+		return "login";
+	}
+	
+	@GetMapping("/logout")
+	public String logout() {
+		return "logout";
+	}
+	
 	@GetMapping("/register")
 	public String showRegistrationForm(Model model) {
 	    model.addAttribute("user", new User());
