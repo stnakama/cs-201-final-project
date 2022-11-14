@@ -9,7 +9,7 @@ CREATE TABLE User (
 	userID int not null auto_increment, 
     username varchar(50) not null unique, 
     password varchar(64) not null,
-    token varchar(255) not null,
+    token varchar(255) not null SET DEFAULT '',
     PRIMARY KEY(userID)
 );
 
