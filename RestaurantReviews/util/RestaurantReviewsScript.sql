@@ -8,7 +8,7 @@ DROP TABLE IF EXISTS Restaurant;
 CREATE TABLE User ( 
 	userID int not null auto_increment, 
     username varchar(50) not null unique, 
-    password varchar(50) not null,
+    password varchar(64) not null,
     PRIMARY KEY(userID)
 );
 
