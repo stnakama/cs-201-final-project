@@ -6,11 +6,11 @@ DROP TABLE IF EXISTS Restaurant;
 
 
 CREATE TABLE User ( 
-userID int not null auto_increment, 
-username varchar(50) not null unique, 
-password varchar(64) not null,
-token varchar(255),
-PRIMARY KEY(userID)
+	userID int not null auto_increment, 
+    username varchar(50) not null unique, 
+    password varchar(64) not null,
+    token varchar(255) not null,
+    PRIMARY KEY(userID)
 );
 
 CREATE TABLE Restaurant (
