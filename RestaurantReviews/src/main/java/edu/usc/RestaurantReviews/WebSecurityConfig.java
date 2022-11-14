@@ -46,24 +46,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
     	
     }
     
-//    @Autowired
-//    public void configureGlobal(AuthenticationManagerBuilder auth)
-//      throws Exception {
-//        auth.jdbcAuthentication()
-//          .dataSource(dataSource)
-//          .usersByUsernameQuery("select username,password,enabled "
-//        	        + "from User "
-//        	        + "where username = ?")
-//          ;
-//    }
  
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
         	.antMatchers("/api/**").authenticated()
-        	.anyRequest().permitAll()
-//            .antMatchers("/", "login").authenticated()
-//            .anyRequest().permitAll()
             .and()
             .formLogin()
             .loginPage("/login")

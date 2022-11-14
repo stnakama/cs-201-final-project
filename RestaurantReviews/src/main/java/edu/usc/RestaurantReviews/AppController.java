@@ -23,24 +23,6 @@ public class AppController {
 	}
 	
 	
-	@GetMapping("/login")
-	public String loginPage() {
-		return "login";
-	}
-	
-	@GetMapping("/logout")
-	public String logout() {
-		return "logout";
-	}
-	
-	@GetMapping("/register")
-	public String showRegistrationForm(Model model) {
-	    model.addAttribute("user", new User());
-	     
-	    return "signup_form";
-	}
-	
-	
 	@GetMapping("/table")
 	public String table() {
 		try {
