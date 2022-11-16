@@ -28,5 +28,15 @@ public class RestaurantController {
 		return rService.getRestaurants();
 	}
 	
+	@RequestMapping(value="/restaurants/{restaurantID}", method=RequestMethod.GET)
+	public Restaurant readRestaurant(@PathVariable(value = "restaurantID") Long restaurantID) {
+		List<Restaurant> list = rService.getRestaurants();
+		for(Restaurant r : list) {
+			if(r.getId() == restaurantID) {
+				return r;
+			}
+		}
+		return null;
+	}
 	
 }

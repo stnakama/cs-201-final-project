@@ -19,13 +19,24 @@ public class UserController {
 	
 	
 	@RequestMapping(value="/users", method=RequestMethod.POST)
-	public User createRestaurant(@RequestBody User u) {
+	public User createUser(@RequestBody User u) {
 	    return uService.createUser(u);
 	}
 	
 	@RequestMapping(value="/users", method=RequestMethod.GET)
-	public List<User> readRestaurants(){
+	public List<User> readUsers(){
 		return uService.getUsers();
+	}
+	
+	@RequestMapping(value="/users/{userID}", method=RequestMethod.GET)
+	public User readReview(@PathVariable(value = "userID") Long userID) {
+		List<User> list = uService.getUsers();
+		for(User u : list) {
+			if(u.getId() == userID) {
+				return u;
+			}
+		}
+		return null;
 	}
 	
 	

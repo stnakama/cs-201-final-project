@@ -16,24 +16,39 @@ public class ReviewController {
 	@Autowired
     ReviewService revService;
 	
-	@RequestMapping(value="/Review", method=RequestMethod.POST)
+	@RequestMapping(value="/reviews", method=RequestMethod.POST)
 	public Review createReview(@RequestBody Review rev ) {
 	    return revService.createReview(rev);
 	}
 	
-	@RequestMapping(value="/Review", method=RequestMethod.GET)
+	@RequestMapping(value="/reviews", method=RequestMethod.GET)
 	public List<Review> readReviews() {
 	    return revService.readReview();
 	}
-
-	@RequestMapping(value="/Review/{userID}", method=RequestMethod.PUT)
-	public Review readReviews(@PathVariable(value = "userID") Long userid, @RequestBody Review revDetails) {
-	    return revService.updateReview(userid, revDetails);
+	
+	
+	@RequestMapping(value="/reviews/{reviewID}", method=RequestMethod.GET)
+	public Review readReview(@PathVariable(value = "reviewID") Long reviewID) {
+		List<Review> list = revService.readReview();
+		for(Review r : list) {
+			if(r.getReviewID() == reviewID) {
+				return r;
+			}
+		}
+		return null;
 	}
 
-	@RequestMapping(value="/Review/{userID}", method=RequestMethod.DELETE)
-	public void deleteEmployees(@PathVariable(value = "userId") Long id) {
+	
+	
+	/*
+	@RequestMapping(value="/reviews/{reviewID}", method=RequestMethod.PUT)
+	public Review readReviews(@PathVariable(value = "reviewID") Long reviewid, @RequestBody Review revDetails) {
+	    return revService.updateReview(reviewid, revDetails);
+	}
+
+	@RequestMapping(value="/reviews/{reviewID}", method=RequestMethod.DELETE)
+	public void deleteReviews(@PathVariable(value = "reviewId") Long id) {
 	    revService.deleteReview(id);
-	}
+	}*/
 	
 }
