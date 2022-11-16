@@ -1,4 +1,4 @@
-package edu.usc.Review.model;
+package edu.usc.RestaurantReviews;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
