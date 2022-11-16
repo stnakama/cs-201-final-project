@@ -26,7 +26,7 @@ public class Review {
     private String review;
     
     @Column(name="timePosted")
-    private Long datetime;
+    private String datetime;
 
     public Long getReviewID() {
 		return reviewid;
@@ -44,7 +44,7 @@ public class Review {
 		return review;
 	}
 	
-	public Long getTimePosted() {
+	public String getTimePosted() {
 		return datetime;
 	}
 	
@@ -64,7 +64,7 @@ public class Review {
 		review = rev;
 	}
 
-	public void setTimePosted(Long time) {
+	public void setTimePosted(String time) {
 		datetime = time;
 	}
 }
