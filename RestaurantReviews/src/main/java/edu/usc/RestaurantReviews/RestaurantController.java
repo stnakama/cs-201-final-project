@@ -1,6 +1,7 @@
 package edu.usc.RestaurantReviews;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +38,18 @@ public class RestaurantController {
 			}
 		}
 		return null;
+	}
+	
+	@RequestMapping(value="/restaurants/cuisine/{cuisineType}", method=RequestMethod.GET)
+	public List<Restaurant> getByCuisine(@PathVariable(value = "cuisineType") String cuisineType) {
+		List<Restaurant> list = rService.getRestaurants();
+		List<Restaurant> list2 = new ArrayList<Restaurant>();
+		for(Restaurant r : list) {
+			if(r.getCuisineType().toLowerCase().equals(cuisineType.toLowerCase())) {
+				list2.add(r);
+			}
+		}
+		return list2;
 	}
 	
 }
