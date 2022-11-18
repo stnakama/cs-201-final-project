@@ -25,4 +25,10 @@ public class RestaurantService {
 	public void deleteRestaurant(Long rId) {
 	    rRepo.deleteById(rId);
 	}
+
+	public Restaurant findByName(String name) {
+		return rRepo.findByName(name);
+	}
+	
+
 }

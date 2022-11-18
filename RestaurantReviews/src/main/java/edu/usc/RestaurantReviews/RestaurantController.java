@@ -52,4 +52,11 @@ public class RestaurantController {
 		return list2;
 	}
 	
+	@RequestMapping(value="/restaurants/name/{name}", method=RequestMethod.GET)
+	public Restaurant getByName(@PathVariable(value = "name") String name) {
+		return rService.findByName(name);
+	}
+	
+	
+	
 }
