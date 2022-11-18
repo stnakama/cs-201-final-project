@@ -10,4 +10,6 @@ import org.springframework.stereotype.Repository;
 public interface ReviewRepository extends JpaRepository<Review, Long> {
 	
 	List<Review> findByRestaurantid(Long rId);
+
+	List<Review> findByUserid(Long userID);
 }

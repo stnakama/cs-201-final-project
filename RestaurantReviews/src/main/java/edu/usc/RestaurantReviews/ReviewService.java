@@ -41,5 +41,9 @@ public class ReviewService {
 	public List<Review> findByRestaurantID(Long restaurantID){
 		return revRepository.findByRestaurantid(restaurantID);
 	}
+	
+	public List<Review> findByUserID(Long userID){
+		return revRepository.findByUserid(userID);
+	}
 }
 

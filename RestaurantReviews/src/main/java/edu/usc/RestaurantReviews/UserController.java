@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 	
 	@Autowired UserService uService;
+	@Autowired ReviewService revService;
 	
 	
 	@RequestMapping(value="/users", method=RequestMethod.POST)
@@ -44,5 +45,8 @@ public class UserController {
 		return uService.findByUsername(username);
 	}
 	
-	
+	@RequestMapping(value="/users/{userID}/reviews", method=RequestMethod.GET)
+	public List<Review> getUserReviews(@PathVariable(value = "userID") Long userID) {
+		return revService.findByUserID(userID);
+	}
 }
