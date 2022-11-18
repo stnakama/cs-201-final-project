@@ -39,5 +39,10 @@ public class UserController {
 		return null;
 	}
 	
+	@RequestMapping(value="users/username/{username}", method=RequestMethod.GET)
+	public User findByUsername(@PathVariable(value="username") String username) {
+		return uService.findByUsername(username);
+	}
+	
 	
 }

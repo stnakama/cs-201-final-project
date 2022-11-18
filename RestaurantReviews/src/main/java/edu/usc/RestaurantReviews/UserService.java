@@ -25,4 +25,8 @@ public class UserService {
 	public void deleteUser(Long rId) {
 	    uRepo.deleteById(rId);
 	}
+	
+	public User findByUsername(String username) {
+		return uRepo.findByUsername(username);
+	}
 }
