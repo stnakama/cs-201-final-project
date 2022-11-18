@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class RestaurantController {
 	
 	@Autowired RestaurantService rService;
+	@Autowired ReviewService revService;
 	
 	
 	@RequestMapping(value="/restaurants", method=RequestMethod.POST)
@@ -57,6 +58,10 @@ public class RestaurantController {
 		return rService.findByName(name);
 	}
 	
+	@RequestMapping(value="/restaurants/{restaurantID}/reviews", method=RequestMethod.GET)
+	public List<Review> getRestaurantReviews(@PathVariable(value = "restaurantID") Long restaurantID) {
+		return revService.findByRestaurantID(restaurantID);
+	}
 	
 	
 }

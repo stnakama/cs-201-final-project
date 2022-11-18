@@ -34,8 +34,12 @@ public class ReviewService {
 	}
 	
 	//Delete
-	public void deleteReview(Long userID) {
-	    revRepository.deleteById(userID);
+	public void deleteReview(Long reviewID) {
+	    revRepository.deleteById(reviewID);
+	}
+	
+	public List<Review> findByRestaurantID(Long restaurantID){
+		return revRepository.findByRestaurantid(restaurantID);
 	}
 }
 
