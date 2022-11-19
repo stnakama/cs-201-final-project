@@ -1,11 +1,14 @@
 package edu.usc.RestaurantReviews;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class UserAuthController {
@@ -38,5 +41,11 @@ public class UserAuthController {
 	    uService.createUser(user);
 	     
 	    return "register_success";
+	}
+	
+	@GetMapping("/isAuthorized")
+	@ResponseBody
+	public boolean isUserLoggedIn(){	
+		return !SecurityContextHolder.getContext().getAuthentication().getName().equals("anonymousUser");
 	}
 }
