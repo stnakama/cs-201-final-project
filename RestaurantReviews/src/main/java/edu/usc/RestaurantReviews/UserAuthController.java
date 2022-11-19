@@ -14,7 +14,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class UserAuthController {
 	
 	@Autowired UserService uService;
-	
+
+	//don't need this page - use endpoint for something else?
 	@GetMapping("/login")
 	public String loginPage() {
 		return "login";
@@ -22,13 +23,13 @@ public class UserAuthController {
 	
 	@GetMapping("/logout")
 	public String logout() {
+		//TODO: same with process_register, we need to change the return value
 		return "logout";
 	}
 	
 	@GetMapping("/register")
 	public String showRegistrationForm(Model model) {
 	    model.addAttribute("user", new User());
-	     
 	    return "signup_form";
 	}
 	
@@ -39,8 +40,9 @@ public class UserAuthController {
 	    user.setPassword(encodedPassword);
 	     
 	    uService.createUser(user);
-	     
-	    return "register_success";
+	    
+	    //TODO instead of rendering a page, either need to throw error or return success message
+	    return "true";
 	}
 	
 	@GetMapping("/isAuthorized")
