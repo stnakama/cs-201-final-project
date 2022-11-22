@@ -53,11 +53,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
  
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-    	http.exceptionHandling().authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED));
         http
         .cors().and().csrf().disable() //to make postman requests - TODO actually implement cors
         	.authorizeRequests()
-        	.antMatchers("/api/**").authenticated()
             .and()
             .formLogin()
             .loginPage("/login")
