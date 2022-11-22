@@ -2,7 +2,9 @@ package edu.usc.RestaurantReviews;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -12,8 +14,15 @@ public class UserService {
 	@Autowired UserRepository uRepo;
 	
 	// CREATE 
-	public User createUser(User u) {
-	    return uRepo.save(u);
+	public String createUser(User u) {
+	    try { 
+	    	uRepo.save(u);
+	    }
+	    catch(DataIntegrityViolationException e) {
+	    	return "false";
+	    }
+	    
+	    return "true";
 	}
 
 	// READ

@@ -34,15 +34,14 @@ public class UserAuthController {
 	}
 	
 	@PostMapping("/process_register")
+	@ResponseBody
 	public String processRegister(User user) {
 	    BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 	    String encodedPassword = passwordEncoder.encode(user.getPassword());
 	    user.setPassword(encodedPassword);
-	     
-	    uService.createUser(user);
 	    
-	    //TODO instead of rendering a page, either need to throw error or return success message
-	    return "true";
+	    return uService.createUser(user);
+	    
 	}
 	
 	@GetMapping("/isAuthorized")
