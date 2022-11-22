@@ -48,4 +48,10 @@ public class UserAuthController {
 	public boolean isUserLoggedIn(){	
 		return !SecurityContextHolder.getContext().getAuthentication().getName().equals("anonymousUser");
 	}
+	
+	@GetMapping("/getUsername")
+	@ResponseBody
+	public String getUsername(){	
+		return SecurityContextHolder.getContext().getAuthentication().getName();
+	}
 }
