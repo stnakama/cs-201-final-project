@@ -1,7 +1,13 @@
 package edu.usc.RestaurantReviews;
 
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
+import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,8 +18,10 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
 import org.springframework.security.web.authentication.logout.HttpStatusReturningLogoutSuccessHandler;
@@ -61,6 +69,26 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
             .loginPage("/login")
                 .usernameParameter("username")
                 .permitAll()
+                .successHandler(new AuthenticationSuccessHandler() {
+                    
+                    public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
+                    		org.springframework.security.core.Authentication authentication) throws IOException, ServletException {
+                    	response.setStatus( HttpServletResponse.SC_OK );
+                    	response.getWriter().write("true");
+                    }
+                    
+                })
+                .failureHandler(new AuthenticationFailureHandler() {
+
+					@Override
+					public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response,
+							AuthenticationException exception) throws IOException, ServletException {
+						response.setStatus( HttpServletResponse.SC_UNAUTHORIZED );
+                    	response.getWriter().write("false");
+						
+					}
+                	
+                })
             .and()
             .logout()
             .logoutSuccessHandler(new HttpStatusReturningLogoutSuccessHandler());
