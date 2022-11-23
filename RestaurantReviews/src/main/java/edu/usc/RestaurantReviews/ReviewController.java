@@ -1,5 +1,6 @@
 package edu.usc.RestaurantReviews;
 
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,12 +16,24 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 @CrossOrigin(maxAge = 3600)
 public class ReviewController {
-	@Autowired
-    ReviewService revService;
+	
+	@Autowired ReviewService revService;
+	@Autowired UserService uService;
 	
 	@RequestMapping(value="/reviews", method=RequestMethod.POST)
 	public Review createReview(@RequestBody Review rev ) {
-	    return revService.createReview(rev);
+	    Review r = revService.createReview(rev);
+	    
+	    // Set username
+	    List<User> users = uService.getUsers();
+	    for(User u : users) {
+	    	if(u.getId() == r.getUserID()) {
+	    		r.setUsername(u.getUsername());
+	    		break;
+	    	}
+	    }
+	    
+	    return r;
 	}
 	
 	@RequestMapping(value="/reviews", method=RequestMethod.GET)

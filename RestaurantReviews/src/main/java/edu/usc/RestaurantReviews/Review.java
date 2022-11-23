@@ -19,6 +19,9 @@ public class Review {
     @Column(name="userID")
     private Long userid;
     
+    @Column(name="username")
+    private String username;
+    
     @Column(name="restaurantID")
     private Long restaurantid;
     
@@ -34,6 +37,10 @@ public class Review {
 	
     public Long getUserID() {
 		return userid;
+	}
+    
+    public String getUsername() {
+		return username;
 	}
 
 	public Long getRestID() {
@@ -54,6 +61,10 @@ public class Review {
 
 	public void setUserID(Long u) {
 		userid = u;
+	}
+	
+	public void setUsername(String u) {
+		username = u;
 	}
 	
 	public void setRestID(Long r) {
