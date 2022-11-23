@@ -22,11 +22,11 @@ public class UserController {
 	@Autowired UserService uService;
 	@Autowired ReviewService revService;
 	
-	
-	@RequestMapping(value="/users", method=RequestMethod.POST)
-	public User createUser(@RequestBody User u) {
-	    return uService.createUser(u);
-	}
+// use process_register in user auth controller to make a new user
+//	@RequestMapping(value="/users", method=RequestMethod.POST)
+//	public String createUser(@RequestBody User u) {
+//	    return uService.createUser(u);
+//	}
 	
 	@RequestMapping(value="/users", method=RequestMethod.GET)
 	public List<User> readUsers(){
