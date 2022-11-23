@@ -44,6 +44,17 @@ public class UserController {
 		return null;
 	}
 	
+	@RequestMapping(value="/users/get/{username}", method=RequestMethod.GET)
+	public Long readReview(@PathVariable(value = "username") String username) {
+		List<User> list = uService.getUsers();
+		for(User u : list) {
+			if(u.getUsername().equals(username)) {
+				return u.getId();
+			}
+		}
+		return (long) -1;
+	}
+	
 	@RequestMapping(value="users/username/{username}", method=RequestMethod.GET)
 	public User findByUsername(@PathVariable(value="username") String username) {
 		return uService.findByUsername(username);
