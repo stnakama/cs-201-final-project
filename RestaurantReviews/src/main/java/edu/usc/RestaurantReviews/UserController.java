@@ -1,6 +1,7 @@
 package edu.usc.RestaurantReviews;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,10 +62,27 @@ public class UserController {
 		return uService.findByUsername(username);
 	}
 	
+	
 	@RequestMapping(value="/users/{userID}/reviews", method=RequestMethod.GET)
 	public List<Review> getUserReviews(@PathVariable(value = "userID") Long userID) {
 		return revService.findByUserID(userID);
 	}
+	
+	@RequestMapping(value="/users/reviews/{username}", method=RequestMethod.GET)
+	public List<Review> getUsernameReviews(@PathVariable(value = "username") String username) {
+		List<Review> reviews = revService.readReview();
+		List<Review> ans = new ArrayList<Review>();
+		
+		for(Review r : reviews) {
+			if(r.getUsername().equals(username)) {
+				ans.add(r);
+			}
+		}
+		
+		return ans;
+	}
+	
+	
 		
 	@PostMapping("/process_register")
 	public String processRegister(User user) {

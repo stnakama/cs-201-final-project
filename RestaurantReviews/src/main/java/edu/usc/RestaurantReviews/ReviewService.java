@@ -21,6 +21,7 @@ public class ReviewService {
 		return revRepository.findAll();
 	}
 	
+	
 	//Update
 	public Review updateReview(Long userID, Review reviewDetails) {
 	        Review rev = revRepository.findById(userID).get();
@@ -37,6 +38,9 @@ public class ReviewService {
 	public void deleteReview(Long reviewID) {
 	    revRepository.deleteById(reviewID);
 	}
+	
+	
+	
 	
 	public List<Review> findByRestaurantID(Long restaurantID){
 		return revRepository.findByRestaurantid(restaurantID);
