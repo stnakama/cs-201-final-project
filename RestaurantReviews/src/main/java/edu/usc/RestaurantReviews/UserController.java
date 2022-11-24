@@ -52,6 +52,7 @@ public class UserController {
 				return u.getId();
 			}
 		}
+		
 		return (long) -1;
 	}
 	
