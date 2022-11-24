@@ -34,7 +34,7 @@ public class UserController {
 	}
 	
 	@RequestMapping(value="/users/{userID}", method=RequestMethod.GET)
-	public User readReview(@PathVariable(value = "userID") Long userID) {
+	public User readUser(@PathVariable(value = "userID") Long userID) {
 		List<User> list = uService.getUsers();
 		for(User u : list) {
 			if(u.getId() == userID) {
