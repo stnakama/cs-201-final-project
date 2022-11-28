@@ -25,6 +25,9 @@ public class Review {
     @Column(name="restaurantID")
     private Long restaurantid;
     
+    @Column(name="restaurantName")
+    private String restaurantName;
+    
     @Column(name="textReview")
     private String review;
     
@@ -45,6 +48,10 @@ public class Review {
 
 	public Long getRestID() {
 		return restaurantid;
+	}
+	
+	public String getRestaurantName() {
+		return restaurantName;
 	}
 
 	public String getTextRev() {
@@ -69,6 +76,10 @@ public class Review {
 	
 	public void setRestID(Long r) {
 		restaurantid = r;
+	}
+	
+	public void setRestaurantName(String r) {
+		restaurantName = r;
 	}
 
 	public void setTextRev(String rev) {

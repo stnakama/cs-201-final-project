@@ -19,6 +19,7 @@ public class ReviewController {
 	
 	@Autowired ReviewService revService;
 	@Autowired UserService uService;
+	@Autowired RestaurantService restService;
 	
 	@RequestMapping(value="/reviews", method=RequestMethod.POST)
 	public Review createReview(@RequestBody Review rev ) {
@@ -29,6 +30,15 @@ public class ReviewController {
 	    for(User u : users) {
 	    	if(u.getId() == r.getUserID()) {
 	    		r.setUsername(u.getUsername());
+	    		break;
+	    	}
+	    }
+	    
+	    // Set restaurantName
+	    List<Restaurant> restaurants = restService.getRestaurants();
+	    for(Restaurant rest : restaurants) {
+	    	if(rest.getId() == r.getRestID()) {
+	    		r.setRestaurantName(rest.getName());
 	    		break;
 	    	}
 	    }
