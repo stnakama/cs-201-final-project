@@ -27,6 +27,7 @@ CREATE TABLE Review (
     userID int not null,
     username varchar(50) not null,
     restaurantID int not null,
+    restaurantName varchar(50) not null,
     textReview varchar(1000) not null,
     timePosted DATETIME not null,
     PRIMARY KEY(reviewID),
@@ -104,10 +105,10 @@ INSERT INTO Restaurant (name, address, cuisineType) VALUES ('CAVA', '3201 S Hoov
 
 
 
-INSERT INTO Review (userID, username, restaurantID, textReview, timePosted) VALUES (1, 'Alice', 2, 'I love the burgers at Stout\'s! Would go again!', '2022-11-07');
-INSERT INTO Review (userID, username, restaurantID, textReview, timePosted) VALUES (1, 'Alice', 3, 'Greenleaf was okay. The staff was quite rude to me!', '2022-11-04');
-INSERT INTO Review (userID, username, restaurantID, textReview, timePosted) VALUES (2, 'Bob', 11, 'The pasta here is amazing!', '2022-11-08');
-INSERT INTO Review (userID, username, restaurantID, textReview, timePosted) VALUES (3, 'Charles', 17, 'I\'m never eating here again. The food is absolutely horrible.', '2022-11-08');
+INSERT INTO Review (userID, username, restaurantID, textReview, timePosted) VALUES (1, 'Alice', 2, 'Stout Burgers & Beers', 'I love the burgers at Stout\'s! Would go again!', '2022-11-07');
+INSERT INTO Review (userID, username, restaurantID, textReview, timePosted) VALUES (1, 'Alice', 3, 'Greenleaf Kitchen & Cocktails', 'Greenleaf was okay. The staff was quite rude to me!', '2022-11-04');
+INSERT INTO Review (userID, username, restaurantID, textReview, timePosted) VALUES (2, 'Bob', 11, 'Monarca Pasta & Grill', 'The pasta here is amazing!', '2022-11-08');
+INSERT INTO Review (userID, username, restaurantID, textReview, timePosted) VALUES (3, 'Charles', 17, 'La Catrina Restaurant', 'I\'m never eating here again. The food is absolutely horrible.', '2022-11-08');
 
 
 SELECT * FROM User;
