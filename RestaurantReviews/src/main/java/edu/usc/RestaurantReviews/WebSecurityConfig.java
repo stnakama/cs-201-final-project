@@ -25,9 +25,11 @@ import org.springframework.security.web.authentication.AuthenticationFailureHand
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
 import org.springframework.security.web.authentication.logout.HttpStatusReturningLogoutSuccessHandler;
+import org.springframework.web.bind.annotation.CrossOrigin;
  
 @Configuration
 @EnableWebSecurity
+@CrossOrigin(maxAge = 3600)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
     @Autowired
     private DataSource dataSource;
@@ -74,6 +76,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
                     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
                     		org.springframework.security.core.Authentication authentication) throws IOException, ServletException {
                     	response.setStatus( HttpServletResponse.SC_OK );
+                    	response.addHeader("Access-Control-Allow-Origin", "*");
                     	response.getWriter().write("true");
                     }
                     
@@ -84,6 +87,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 					public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response,
 							AuthenticationException exception) throws IOException, ServletException {
 						response.setStatus( HttpServletResponse.SC_UNAUTHORIZED );
+						response.addHeader("Access-Control-Allow-Origin", "*");
                     	response.getWriter().write("false");
 						
 					}
